@@ -1,8 +1,10 @@
-describe('Enter GURU99 Name', function() {
- it('should add a Name as GURU99', function() {
- browser.get('https://angularjs.org');
- element(by.model('yourName')).sendKeys('GURU99');
-  var guru= element(by.xpath('html/body/div[2]/div[1]/div[2]/div[2]/div/h1'));
-expect(guru.getText()).toEqual('Hello GURU99!');
+describe('NBL Login Validation', function() {
+ it('Login With Valid Data', function() {
+ browser.get('https://msmecor.com/app/account#/login');
+ element(by.model('username')).sendKeys('nbl'); 
+ element(by.model('password')).sendKeys('msm12!!2017');
+ element(by.xpath('input[@value='Login']')).click();
+ var dashboardTitle= element(by.xpath('div[@class='dashboard-title']').getText();
+ expect(dashboardTitle).toEqual('NBL Main Dashboard (Beta)');
   });
 });
